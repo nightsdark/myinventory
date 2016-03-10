@@ -1,0 +1,19 @@
+<template name="Receipt">
+  <h1 class="page title">My Current Receipt</h1>
+    {{#each items}}
+      {{> ReceiptItem}}
+    {{else}}
+      <h3>Please add <a href="/my-inventory">items</a> to your receipt</h3>
+    {{/each}}
+</template>
+
+<template name="ReceiptItem">
+  <div class="receipt-item">
+    <h3>{{name}}</h3><h4>P/N#: {{part}}</h4>
+    <h4>{{rawCost}}</h4>
+    <p>{{desc}}</p>
+    <p>{{cost}}</p>
+    <p>{{createdAt}}</p>
+  </div>
+</template>
+

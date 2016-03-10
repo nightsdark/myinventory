@@ -1,0 +1,15 @@
+<template name="Storage">
+  <h1 class="page title">This Item is in Storage</h1>
+    {{#each items}}
+      {{> StorageItem}}
+    {{else}}
+      <h3>Please add <a href="/my-inventory">items</a> to your Storage</h3>
+    {{/each}}
+</template>
+
+<template name="StorageItem">
+  <div class="storage-item">
+    <h3>{{name}}</h3>
+    <p>{{desc}}</p>
+  </div>
+</template>

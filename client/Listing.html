@@ -1,0 +1,13 @@
+<template name="Listing">
+  <h1 class="page-title">My Listing</h1>
+  <ul class="listing">
+    {{#each Listing}}
+      {{#each details}}
+        <li>{{key}} - <span>{{value}}</span></li>
+      {{/each}}
+    {{else}}
+    <p>Please add <a href="/my-inventory">items</a> to your receipt</p>
+    {{/each}}
+  </ul>
+</template>
+

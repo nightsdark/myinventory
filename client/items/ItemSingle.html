@@ -1,0 +1,26 @@
+<template name="ItemSingle">
+  <h1>{{item.name}}</h1>
+  {{#with item}}
+  {{> editableText textarea=true wysiwyg=true options=desc}}
+    <div class="detail-item-container">
+      {{#each details}}
+        <ul>
+          <li>{{this.key}}: {{this.value}}</li>
+        </ul>
+      {{/each}}
+    </div>
+    <div>
+    <form id="form">
+                <label>File: </label>
+                <input type="file" id="file" name="filename" size="50"/><br/>
+                <br/>
+                <input type="submit" id="change" value="Upload Now"/>
+    </form>
+    </div>
+    <div>
+      <ul>
+        <li>{{file.value}}</li>
+      </ul>
+    </div>
+  {{/with}}
+</template>

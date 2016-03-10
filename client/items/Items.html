@@ -1,0 +1,16 @@
+<template name="Items">
+  {{#if $.Session.get 'newItem'}}
+    {{> NewItem }}
+  {{else}}
+    <button class="new-item">New Item</button>
+  {{/if}}
+  <section class="items">
+    {{#if Template.subscriptionsReady}}
+      {{#each items}}
+        {{> Item}}
+      {{/each}}
+    {{else}}
+      <p>Loading</p>
+    {{/if}}
+  </section>
+</template>

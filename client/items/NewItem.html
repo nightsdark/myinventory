@@ -1,0 +1,14 @@
+<template name="NewItem">
+  <div class="new-item-container">
+    <i class="fa fa-close"></i>
+    {{> quickForm collection="Items" id="insertItemForm" type="insert" class="new-item-form"}}
+  </div>
+  <div class="detail-item-container">
+    {{#each detail}}
+      {{this.key}}
+      {{this.value}}
+    {{/each}}
+  </div>
+
+</template>
+

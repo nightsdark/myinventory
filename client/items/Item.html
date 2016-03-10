@@ -1,0 +1,31 @@
+<template name="Item">
+  <article class="item {{#if inReceipt}}in-receipt{{/if}}">
+    <h3>{{name}}</h3>
+    <h4>P/N#: {{part}}</h4>
+    <h4>Cost USD: {{rawCost}}</h4>
+      {{#if editMode}}
+        {{> quickForm collection="Items" id=updateItemId type="update" doc=this autosave=true}}
+      {{else}}
+        <p>
+          {{#each details}}
+            <span class="details">{{key}} - {{value}}</span>
+          {{/each}}
+        </p>
+        <a href="/item/{{_id}}">View Details</a>
+        {{#if inReceipt}}
+          <button class="btn-deny toggle-receipt">Remove from Receipt</button>
+        {{else}}
+          <button class="btn-primary toggle-receipt">Add to Receipt</button>
+        {{/if}}
+
+        {{#if inStorage}}
+          <button class="btn-deny toggle-storage">Remove from Storage</button>
+        {{else}}
+          <button class="btn-primary toggle-storage">Add to Storage</button>
+        {{/if}}
+
+      {{/if}}
+      <i class="fa fa-pencil"></i>
+      <i class="fa fa-trash"></i>
+  </article>
+</template>
